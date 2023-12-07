@@ -1,0 +1,28 @@
+#!/bin/bash
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+echo 'Starting nvim reset'
+printf 'nvim reset will remove current state but not configuration files. Continue (y/n)? '
+read answer
+
+if [ "$answer" != "${answer#[Yy]}" ] ;then 
+	echo ''
+	printf 'Removing rm -rf ~/.local/share/nvim'
+	rm -rf ~/.local/share/nvim
+	printf ' \xE2\x9C\x94'
+
+	echo ''
+	printf 'Removing rm -rf ~/.local/state/nvim'
+	rm -rf ~/.local/state/nvim
+	printf ' \xE2\x9C\x94'
+
+	echo ''
+	printf 'Removing rm -rf ~/.cache/nvim'
+	rm -rf ~/.cache/nvim
+	printf ' \xE2\x9C\x94'
+else
+	echo 'Aborting ...'
+fi
+echo ''
+exit 0

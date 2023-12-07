@@ -8,20 +8,23 @@ read answer
 
 if [ "$answer" != "${answer#[Yy]}" ] ;then 
     echo '' 
-    printf 'Removing ~/.zshrc and adding symlink to zsh/zshrc'
+    printf 'Removing ~/.zshrc and adding symlink to dotfiles/zsh/zshrc'
     rm -f ~/.zshrc
     rm -f ~/.p10k.zsh
     ln -s $SCRIPT_DIR/zsh/zshrc ~/.zshrc
     ln -s $SCRIPT_DIR/zsh/p10k.zsh ~/.p10k.zsh
     printf ' \xE2\x9C\x94'
 
-     echo '' 
-    printf 'Removing ~/.tmux.conf and adding symlink to tmux/tmux'
+    echo '' 
+    printf 'Removing ~/.tmux.conf and adding symlink to dotfiles/tmux/tmux'
     rm -f ~/.tmux.conf
     ln -s $SCRIPT_DIR/tmux/tmux.conf ~/.tmux.conf
     printf ' \xE2\x9C\x94'
 
-
+    echo ''
+    printf 'Removing ~/.config/nvim and adding symlink to dotfiles/nvim'
+    rm -rf ~/.config/nvim
+    ln -s $SCRIPT_DIR/nvim ~/.config/nvim
 else
     echo Aborting...
 fi
