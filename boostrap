@@ -12,7 +12,7 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
     rm -f ~/.zshrc
     rm -f ~/.p10k.zsh
     ln -s $SCRIPT_DIR/zsh/zshrc ~/.zshrc
-    ln -s $SCRIPT_DIR/zsh/p10k ~/.p10k.zsh
+    ln -s $SCRIPT_DIR/zsh/p10k.zsh ~/.p10k.zsh
     printf ' \xE2\x9C\x94'
 
      echo '' 
