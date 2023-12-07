@@ -1,0 +1,3 @@
+alias zmk_lily_left='(cd ~/Developer/github/zmkfirmware/zmk/app; west build -d build/left -b nice_nano_v2 -- -DSHIELD=lily58_left -DZMK_CONFIG="~/Developer/github/huber-th/zmk-config/config"; cp build/left/zephyr/zmk.uf2 /Volumes/NICENANO/)'
+
+alias zmk_lily_right='(cd ~/Developer/github/zmkfirmware/zmk/app; west build -d build/right -b nice_nano_v2 -- -DSHIELD=lily58_right -DZMK_CONFIG="~/Developer/github/huber-th/zmk-config/config"; cp build/right/zephyr/zmk.uf2 /Volumes/NICENANO/)'

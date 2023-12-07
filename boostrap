@@ -1,0 +1,19 @@
+#!/bin/bash
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+echo 'Starting dotfile bootstrap'
+printf 'Bootstrap will remove current configuration files. Continue (y/n)? '
+read answer
+
+if [ "$answer" != "${answer#[Yy]}" ] ;then 
+    echo ""
+    printf 'Removing ~/.zshrc and adding symlink to zsh/zshrc'
+    rm -f ~/.zshrc
+    rm -f ~/.p10k.zsh
+    ln -s $SCRIPT_DIR/zsh/zshrc ~/.zshrc
+    ln -s $SCRIPT_DIR/zsh/p10k ~/.p10k.zsh
+    printf ' "\xE2\x9C\x94'
+else
+    echo Aborting...
+fi

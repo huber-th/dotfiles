@@ -1,0 +1,9 @@
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+
+function mkcd() {
+    mkdir -p "$@" && cd "$_";
+}
