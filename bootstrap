@@ -25,6 +25,20 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
     printf 'Removing ~/.config/nvim and adding symlink to dotfiles/nvim'
     rm -rf ~/.config/nvim
     ln -s $SCRIPT_DIR/nvim ~/.config/nvim
+    printf ' \xE2\x9C\x94'
+
+    echo ''
+    printf 'Removing vscode settings.json and adding symlink to dotfiles/vscode'
+    rm -rf ~/Library/Application\ Support/Code/User/settings.json
+    ln -s $SCRIPT_DIR/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+    printf ' \xE2\x9C\x94'
+
+    echo ''
+    printf 'Removing vscode keybindings.json and adding symlink to dotfiles/vscode'
+    rm -rf ~/Library/Application\ Support/Code/User/keybindings.json
+    ln -s $SCRIPT_DIR/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+    printf ' \xE2\x9C\x94'
+    
 else
     echo Aborting...
 fi

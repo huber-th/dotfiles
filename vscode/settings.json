@@ -1,0 +1,12 @@
+{
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "editor.minimap.enabled": false,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "workbench.colorTheme": "One Dark Pro",
+    "editor.lineNumbers": "relative",
+    "editor.fontLigatures": false,
+    "editor.fontFamily": "MesloLGS NF, Menlo, Monaco, 'Courier New', monospace",
+    "explorer.confirmDragAndDrop": false
+}
