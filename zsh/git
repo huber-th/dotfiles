@@ -6,7 +6,7 @@ alias difl="dif @^"
 alias gprune='git branch | grep -v "^* main" | xargs git branch -D'
 
 function src {
-   cd "$(find ~/developer/ -maxdepth 5 -type d -name .git | sed 's|/.git$||' | fzf --preview 'tree -L 2 {}')"
+   cd "$(find ~/developer/ -maxdepth 5 -type d -name .git | sed 's|/.git$||' | fzf --query=$1 --preview 'tree -L 2 {}')"
 }
 
 function root {
