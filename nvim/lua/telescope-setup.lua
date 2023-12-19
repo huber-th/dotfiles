@@ -77,5 +77,24 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
+-- In this case, we create a function that lets us more easily define mappings specific
+-- for LSP related items. It sets the mode, buffer and description for us each time.
+local nmap = function(keys, func, desc)
+  if desc then
+    desc = 'LSP: ' .. desc
+  end
+
+  vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+end
+
+nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+
+nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+nmap('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
 -- vim: ts=2 sts=2 sw=2 et

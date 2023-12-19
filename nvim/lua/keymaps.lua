@@ -1,5 +1,10 @@
+-- Open netrw
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
--- Keymaps for better default experience
+
+-- Remap C-u and C-d to also move curser to center
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
