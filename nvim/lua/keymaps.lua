@@ -45,4 +45,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+-- Treesitter Context jump to context upward
+vim.keymap.set("n", "[c", function()
+  require("treesitter-context").go_to_context()
+end, { silent = true })
+
 -- vim: ts=2 sts=2 sw=2 et
