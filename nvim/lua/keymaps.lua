@@ -1,3 +1,5 @@
+-- Open netrw
+vim.keymap.set("n", "<leader>fe", vim.cmd.Ex)
 
 -- Remap C-u and C-d to also move curser to center
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
