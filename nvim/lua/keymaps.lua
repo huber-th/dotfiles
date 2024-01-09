@@ -5,6 +5,10 @@ vim.keymap.set("n", "<leader>fe", vim.cmd.Ex)
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
+-- Navigate buffers left and right
+vim.keymap.set('n', '<C-h>', ':bn<CR>')
+vim.keymap.set('n', '<C-l>', ':bp<CR>')
+
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
