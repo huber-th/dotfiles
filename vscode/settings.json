@@ -1,7 +1,7 @@
 {
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "editor.minimap.enabled": false,
-    "workbench.colorTheme": "One Dark Pro",
+    "workbench.colorTheme": "Catppuccin Latte",
     "editor.lineNumbers": "relative",
     "editor.fontLigatures": false,
     "editor.fontFamily": "MesloLGS NF, Menlo, Monaco, 'Courier New', monospace",
