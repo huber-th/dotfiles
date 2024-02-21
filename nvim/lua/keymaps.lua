@@ -41,14 +41,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.keymap.set("n", "[c", function()
   require("treesitter-context").go_to_context()
 end, { silent = true })
-
--- Harpoon 
-local harpoon = require('harpoon')
-vim.keymap.set("n", "<leader>m", function() harpoon:list():append() end)
-vim.keymap.set("n", "<leader>n", function() harpoon:list():remove() end)
-vim.keymap.set("n", "<leader>,", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-
-vim.keymap.set("n", "<leader>j", function() harpoon:list():select(1) end)
-vim.keymap.set("n", "<leader>k", function() harpoon:list():select(2) end)
-vim.keymap.set("n", "<leader>l", function() harpoon:list():select(3) end)
-vim.keymap.set("n", "<leader>;", function() harpoon:list():select(4) end)
