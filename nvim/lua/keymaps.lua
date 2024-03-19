@@ -5,6 +5,10 @@ vim.keymap.set("n", "<leader>fe", vim.cmd.Ex)
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
+-- Remap S-[ and S-] to also move curser to center
+vim.keymap.set("n", "{", "{zz")
+vim.keymap.set("n", "}", "}zz")
+
 -- Navigate buffers left and right
 vim.keymap.set('n', '<C-l>', ':bn<CR>')
 vim.keymap.set('n', '<C-h>', ':bp<CR>')
