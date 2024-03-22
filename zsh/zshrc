@@ -30,7 +30,7 @@ fi
 source ~/Developer/github/huber-th/dotfiles/zsh/dot
 source ~/Developer/github/huber-th/dotfiles/zsh/git
 source ~/Developer/github/huber-th/dotfiles/zsh/tmux
-source ~/Developer/github/huber-th/dotfiles/zsh/zmk
+source ~/Developer/github/huber-th/dotfiles/zsh/misc
 source ~/.bash_profile
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

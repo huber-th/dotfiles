@@ -1,7 +1,0 @@
-alias zmk_lily58_left='(cd ~/Developer/github/zmkfirmware/zmk/app; west build -d build/lily58/left -b nice_nano_v2 -- -DSHIELD=lily58_left -DZMK_CONFIG="/Users/thuber/Developer/github/huber-th/zmk-config/config"; cp build/lily58/left/zephyr/zmk.uf2 /Volumes/NICENANO/)'
-
-alias zmk_lily58_right='(cd ~/Developer/github/zmkfirmware/zmk/app; west build -d build/lily58/right -b nice_nano_v2 -- -DSHIELD=lily58_right -DZMK_CONFIG="/Users/thuber/Developer/github/huber-th/zmk-config/config"; cp build/lily58/right/zephyr/zmk.uf2 /Volumes/NICENANO/)'
-
-alias zmk_scylla_left='(cd ~/Developer/github/zmkfirmware/zmk/app; west build -d build/scylla/left -b nice_nano_v2 -- -DSHIELD=scylla_left -DZMK_CONFIG="/Users/thuber/Developer/github/huber-th/zmk-config/config"; cp build/scylla/left/zephyr/zmk.uf2 /Volumes/NICENANO/)'
-
-alias zmk_scylla_right='(cd ~/Developer/github/zmkfirmware/zmk/app; west build -d build/scylla/right -b nice_nano_v2 -- -DSHIELD=scylla_right -DZMK_CONFIG="/Users/thuber/Developer/github/huber-th/zmk-config/config"; cp build/scylla/right/zephyr/zmk.uf2 /Volumes/NICENANO/)'
