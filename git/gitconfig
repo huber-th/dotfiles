@@ -20,6 +20,7 @@
 	co = checkout
 	ci = commit
 	cia = commit --amend
+	ciar = commit --amend --reset-author
 	br = branch
 	df = diff
 	dfs = diff --staged
