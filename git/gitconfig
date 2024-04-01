@@ -27,6 +27,9 @@
 	dft = difftool
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset %Cblue(%an)%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
 	cp = cherry-pick
+    fu = fetch upstream
+    f = fetch
+    sb = fetch --all -pP
 [pull]
 	ff = only
 [rebase]
