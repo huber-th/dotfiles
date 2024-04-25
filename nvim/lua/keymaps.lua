@@ -13,6 +13,13 @@ vim.keymap.set("n", "}", "}zz")
 vim.keymap.set('n', '<C-l>', ':bn<CR>')
 vim.keymap.set('n', '<C-h>', ':bp<CR>')
 
+-- Navigation between splits
+vim.keymap.set('n', '<C-h>', [[<Cmd>wincmd h<CR>]])
+vim.keymap.set('n', '<C-j>', [[<Cmd>wincmd j<CR>]])
+vim.keymap.set('n', '<C-k>', [[<Cmd>wincmd k<CR>]])
+vim.keymap.set('n', '<C-l>', [[<Cmd>wincmd l<CR>]])
+vim.keymap.set('n', '<C-w>', [[<C-\><C-n><C-w>]])
+
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
