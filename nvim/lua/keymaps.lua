@@ -10,8 +10,8 @@ vim.keymap.set("n", "{", "{zz")
 vim.keymap.set("n", "}", "}zz")
 
 -- Navigate buffers left and right
-vim.keymap.set('n', '<C-l>', ':bn<CR>')
-vim.keymap.set('n', '<C-h>', ':bp<CR>')
+vim.keymap.set('n', '<C-i>', ':bn<CR>')
+vim.keymap.set('n', '<C-e>', ':bp<CR>')
 
 -- Navigation between splits
 vim.keymap.set('n', '<C-h>', [[<Cmd>wincmd h<CR>]])
