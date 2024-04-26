@@ -80,9 +80,8 @@ return {
       gopls = {},
       pyright = {},
       pylsp = {},
-      -- rust_analyzer = {},
       tsserver = {},
-      -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+      terraformls = {},
 
       lua_ls = {
         Lua = {
