@@ -1,2 +1,0 @@
-alias cstart='colima start --arch aarch64 --vm-type=qemu --cpu=4 --memory=6 --vz-rosetta'
-alias cstop='colima stop'

@@ -27,10 +27,8 @@ if [ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
     source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
-source ~/Developer/github/huber-th/dotfiles/zsh/dot
-source ~/Developer/github/huber-th/dotfiles/zsh/git
-source ~/Developer/github/huber-th/dotfiles/zsh/tmux
-source ~/Developer/github/huber-th/dotfiles/zsh/misc
+source ~/Developer/github/huber-th/dotfiles/zsh/aliases
+source ~/Developer/github/huber-th/dotfiles/zsh/env
 source ~/.bash_profile
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -49,6 +47,3 @@ function zsh_directory_name() {
   done
   return 1
 }
-
-# Set DOCKER_HOST
-export DOCKER_HOST="unix://$HOME/.colima/docker.sock"

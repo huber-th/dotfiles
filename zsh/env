@@ -1,0 +1,5 @@
+# git
+export GPG_TTY=$(tty)
+
+# docker
+export DOCKER_HOST="unix://$HOME/.colima/docker.sock"
