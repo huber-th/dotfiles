@@ -10,8 +10,8 @@ vim.keymap.set("n", "{", "{zz")
 vim.keymap.set("n", "}", "}zz")
 
 -- Navigate buffers left and right
-vim.keymap.set('n', '<C-i>', ':bn<CR>')
-vim.keymap.set('n', '<C-e>', ':bp<CR>')
+vim.keymap.set('n', '<C-e>', ':bn<CR>')
+vim.keymap.set('n', '<C-n>', ':bp<CR>')
 
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
