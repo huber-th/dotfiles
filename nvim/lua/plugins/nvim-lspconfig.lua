@@ -82,6 +82,7 @@ return {
       pylsp = {},
       tsserver = {},
       terraformls = {},
+      yamlls = {},
 
       lua_ls = {
         Lua = {
