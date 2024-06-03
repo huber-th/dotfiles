@@ -83,6 +83,7 @@ return {
       tsserver = {},
       terraformls = {},
       yamlls = {},
+      jsonls = {},
 
       lua_ls = {
         Lua = {
