@@ -84,7 +84,7 @@ return {
       terraformls = {},
       yamlls = {},
       jsonls = {},
-
+      sqlls = {},
       lua_ls = {
         Lua = {
           workspace = { checkThirdParty = false },
