@@ -1,36 +1,45 @@
 [user]
-	name = Thomas Huber
-	email = 113915837+huber-th@users.noreply.github.com
-	signingkey = C8B2604C5DD56D87
+name = Thomas Huber
+email = 113915837+huber-th@users.noreply.github.com
+signingkey = C8B2604C5DD56D87
+
 [push]
-	autoSetupRemote = true
+autoSetupRemote = true
+
 [commit]
-	verbose = true
-	gpgsign = true
+verbose = true
+gpgsign = true
+
 [gpg]
-	program = /usr/local/MacGPG2/bin/gpg2
+program = /usr/local/MacGPG2/bin/gpg2
+
 [tag]
-	forceSignAnnotated = true
+forceSignAnnotated = true
+
 [init]
-	defaultBranch = main
+defaultBranch = main
+
 [core]
-	editor = nvim
+editor = nvim
+
 [alias]
-	st = status
-	co = checkout
-	ci = commit
-	cia = commit --amend
-	ciar = commit --amend --reset-author
-	br = branch
-	df = diff
-	dfs = diff --staged
-	dft = difftool
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset %Cblue(%an)%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
-	cp = cherry-pick
-    fu = fetch upstream
-    f = fetch
-    sb = fetch --all -pP
+st = status
+co = checkout
+ci = commit
+cia = commit --amend
+ciar = commit --amend --reset-author
+br = branch
+df = diff
+dfs = diff --staged
+dft = difftool
+lg = log --color --graph --pretty=format:'%Cred%h%Creset %Cblue(%an)%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
+cp = cherry-pick
+fu = fetch upstream
+f = fetch
+sb = fetch --all -pP
+
 [pull]
-	ff = only
+ff = only
+
 [rebase]
-	autosquash = true
+autosquash = true
