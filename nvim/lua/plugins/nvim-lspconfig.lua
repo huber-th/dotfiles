@@ -73,7 +73,7 @@ return {
       gopls = {},
       pyright = {},
       pylsp = {},
-      tsserver = {},
+      ts_ls = {},
       terraformls = {},
       yamlls = {},
       jsonls = {},
@@ -104,10 +104,6 @@ return {
 
     mason_lspconfig.setup_handlers {
       function(server_name)
-      -- WORKAROUND: adjust tsserver name https://github.com/neovim/nvim-lspconfig/pull/3232
-        if server_name == "tsserver" then
-          server_name = "ts_ls"
-        end
         require('lspconfig')[server_name].setup {
           capabilities = capabilities,
           on_attach = on_attach,
