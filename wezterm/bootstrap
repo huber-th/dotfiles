@@ -1,0 +1,19 @@
+#!/bin/bash
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+echo 'Starting wezterm bootstrap'
+printf 'Bootstrap will remove current configuration files. Continue (y/n)? '
+read answer
+
+if [ "$answer" != "${answer#[Yy]}" ] ;then 
+    echo ''
+    printf 'Removing ~/.wezterm.lua and adding symlink to this repository configuration'
+    rm -f ~/.wezterm.lua
+    ln -s $SCRIPT_DIR/wezterm.lua ~/.wezterm.lua
+    printf ' \xE2\x9C\x94'
+else
+    echo Aborting...
+fi
+echo ''
+exit 0
