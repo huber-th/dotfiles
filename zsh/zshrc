@@ -1,0 +1,76 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+# Enable sharing history between sessions
+setopt share_history
+
+# Enable completion system
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+# Determine where homebrew installed packages
+# This path differs on Intel vs Apple Silicon
+BREW_PATH=/usr/local
+if [ -d /opt/homebrew/ ]; then
+  BREW_PATH=/opt/homebrew
+fi
+
+source $BREW_PATH/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Load p10k theme
+source $BREW_PATH/share/powerlevel10k/powerlevel10k.zsh-theme
+# Load zsh-syntax-highlighting
+source $BREW_PATH/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh_plugins/fzf
+source ~/.zsh_themes/catppuccin_latte-zsh-syntax-highlighting.zsh
+
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+eval "$(pyenv init --path)"
+
+# Only show the current directory and not the full path
+function zsh_directory_name() {
+  emulate -L zsh
+  [[ $1 == d ]] || return
+  while [[ $2 != / ]]; do
+    if [[ -e $2/.git ]]; then
+      typeset -ga reply=(${2:t} $#2)
+      return
+    fi
+    2=${2:h}
+  done
+  return 1
+}
+
+# homebrew
+export HOMEBREW_NO_ENV_HINTS="true"
+
+# git
+export GPG_TTY=$(tty)
+
+# docker
+export DOCKER_HOST="unix://$HOME/.colima/docker.sock"
+
+source_if_exists () {
+  if test -r "$1"; then
+    source "$1"
+  fi
+}
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+source_if_exists ~/.zsh.env
+source_if_exists ~/.bash_profile
+source_if_exists $DOTFILES/zsh/aliases
+
+# Configure up/down arrow to go through zsh-autosuggestions history
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
+# Special configuration file for my work machine which can't be part of
+# the GitHub repository
+source_if_exists ~/.zsh.work

@@ -1,0 +1,37 @@
+# docker / colima
+alias cstart='colima start --arch aarch64 --vm-type=qemu --cpu=4 --memory=6 --vz-rosetta'
+alias cstop='colima stop'
+
+# terraform
+alias tf=terraform
+
+# tmux
+alias tma='tmux attach-session -t'
+alias tml='tmux ls'
+alias tms='tmux new-session -s'
+
+# git
+alias difc="ydiff -s -w0 --wrap --cached"
+alias dif="ydiff -s -w0 --wrap"
+alias difl="dif @^"
+alias gprune='git branch | grep -v "^* main" | xargs git branch -D'
+
+function src {
+   cd "$(find -L ~/Developer/ -maxdepth 5 -type d -name .git | sed 's|/.git$||' | fzf --query=$1 --preview 'tree -L 2 {}')"
+}
+
+function root {
+   cd "$(git rev-parse --show-toplevel 2>/dev/null)"
+}
+
+# misc
+alias ~='cd ~'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+
+function mkcd() {
+    mkdir -p "$@" && cd "$_";
+}

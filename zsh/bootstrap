@@ -1,0 +1,38 @@
+#!/bin/bash
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+echo 'Starting zsh bootstrap'
+printf 'Bootstrap will remove current configuration files. Continue (y/n)? '
+read answer
+
+if [ "$answer" != "${answer#[Yy]}" ] ;then 
+    echo ''
+    printf 'Installing dependencies'
+    brew install powerlevel10k font-meslo-lg-nerd-font zsh-syntax-highlighting zsh-autosuggestions
+    printf ' \xE2\x9C\x94'
+    echo ''
+    printf 'Removing ~/.zshrc and adding symlink to this repository configuration'
+    rm -f ~/.zshrc
+    ln -s $SCRIPT_DIR/zshrc ~/.zshrc
+    printf ' \xE2\x9C\x94'
+    echo ''
+    printf 'Removing ~/.zsh_plugins and adding symlink to this repository configuration'
+    rm -f ~/.zsh_plugins
+    ln -s $SCRIPT_DIR/plugins/ ~/.zsh_plugins
+    printf ' \xE2\x9C\x94'
+    echo ''
+    printf 'Removing ~/.zsh_themes and adding symlink to this repository configuration'
+    rm -f ~/.zsh_themes
+    ln -s $SCRIPT_DIR/themes/ ~/.zsh_themes
+    printf ' \xE2\x9C\x94'
+    echo ''
+    printf 'Removing ~/.p10k.zsh and adding symlink to this repository configuration'
+    rm -f ~/.p10k.zsh
+    ln -s $SCRIPT_DIR/p10k.zsh ~/.p10k.zsh
+    printf ' \xE2\x9C\x94'
+else
+    echo Aborting...
+fi
+echo ''
+exit 0

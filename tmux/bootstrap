@@ -1,0 +1,48 @@
+#!/bin/bash
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+echo 'Starting tmux bootstrap'
+printf 'Bootstrap will remove current configuration files. Continue (y/n)? '
+read answer
+
+if [ "$answer" != "${answer#[Yy]}" ] ;then 
+    echo ''
+    printf 'Installing dependencies'
+    brew install tmux
+    printf ' \xE2\x9C\x94'
+    echo ''
+    printf 'Removing ~/.tmux.conf and adding symlink to this repository configuration'
+    rm -f ~/.tmux.conf
+    ln -s $SCRIPT_DIR/tmux.conf ~/.tmux.conf
+    printf ' \xE2\x9C\x94'
+    echo ''
+    printf 'Removing ~/.config/tmux/'
+    rm -rf ~/.config/tmux/
+    mkdir ~/.config/tmux
+    printf ' \xE2\x9C\x94'
+    echo ''
+    printf 'Cloning catppuccin theme plugin'
+    mkdir -p ~/.config/tmux/plugins/catppuccin
+    git clone -b v2.1.2 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
+    printf ' \xE2\x9C\x94'
+    echo ''
+    printf 'Cloning tmux-resurrect plugin'
+    mkdir -p ~/.config/tmux/plugins/tmux-resurrect
+    git clone https://github.com/tmux-plugins/tmux-resurrect ~/.config/tmux/plugins/tmux-resurrect
+    printf ' \xE2\x9C\x94'
+    echo ''
+    printf 'Cloning tmux-sensible plugin'
+    mkdir -p ~/.config/tmux/plugins/tmux-sensible
+    git clone https://github.com/tmux-plugins/tmux-sensible ~/.config/tmux/plugins/tmux-sensible
+    printf ' \xE2\x9C\x94'
+    echo ''
+    printf 'Cloning tmux-continuum plugin'
+    mkdir -p ~/.config/tmux/plugins/tmux-continuum
+    git clone https://github.com/tmux-plugins/tmux-continuum ~/.config/tmux/plugins/tmux-continuum
+    printf ' \xE2\x9C\x94'
+else
+    echo Aborting...
+fi
+echo ''
+exit 0

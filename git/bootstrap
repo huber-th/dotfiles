@@ -1,0 +1,19 @@
+#!/bin/bash
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+echo 'Starting git bootstrap'
+printf 'Bootstrap will remove current configuration files. Continue (y/n)? '
+read answer
+
+if [ "$answer" != "${answer#[Yy]}" ] ;then 
+    echo ''
+    printf 'Removing ~/.gitconfig and adding symlink to this repository configuration'
+    rm -f ~/.gitconfig
+    ln -s $SCRIPT_DIR/gitconfig ~/.gitconfig
+    printf ' \xE2\x9C\x94'
+else
+    echo Aborting...
+fi
+echo ''
+exit 0

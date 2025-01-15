@@ -1,0 +1,45 @@
+#!/bin/bash
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+echo 'Starting nvim bootstrap'
+echo ''
+printf 'Remove current configuration files and symlink to this configuration. Continue (y/n)? '
+read answer
+
+if [ "$answer" != "${answer#[Yy]}" ] ;then 
+    echo ''
+    printf 'Removing ~/.config/nvim and adding symlink to this configuration'
+    rm -rf ~/.config/nvim
+    ln -s $SCRIPT_DIR ~/.config/nvim
+    printf ' \xE2\x9C\x94'
+else
+    echo Skipping removing existing configuration...
+fi
+echo ''
+echo ''
+
+printf 'Remove current state files. Continue (y/n)? '
+read answer
+echo ''
+
+if [ "$answer" != "${answer#[Yy]}" ] ;then 
+	echo ''
+	printf 'Removing rm -rf ~/.local/share/nvim'
+	rm -rf ~/.local/share/nvim
+	printf ' \xE2\x9C\x94'
+
+	echo ''
+	printf 'Removing rm -rf ~/.local/state/nvim'
+	rm -rf ~/.local/state/nvim
+	printf ' \xE2\x9C\x94'
+
+	echo ''
+	printf 'Removing rm -rf ~/.cache/nvim'
+	rm -rf ~/.cache/nvim
+	printf ' \xE2\x9C\x94'
+else
+    echo Skipping removing state files...
+fi
+echo ''
+exit 0

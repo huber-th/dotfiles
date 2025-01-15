@@ -1,0 +1,48 @@
+[user]
+  name = Thomas Huber
+  email = 113915837+huber-th@users.noreply.github.com
+  signingkey = 5EB137BD4EAC4867
+
+[push]
+  autoSetupRemote = true
+
+[commit]
+  verbose = true
+  gpgsign = true
+
+[gpg]
+  program = /usr/local/MacGPG2/bin/gpg2
+
+[tag]
+  forceSignAnnotated = true
+
+[init]
+  defaultBranch = main
+
+[core]
+  editor = nvim
+
+[alias]
+  st = status
+  co = checkout
+  ci = commit
+  cia = commit --amend
+  ciar = commit --amend --reset-author
+  br = branch
+  df = diff
+  dfs = diff --staged
+  dft = difftool
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset %Cblue(%an)%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
+  cp = cherry-pick
+  fu = fetch upstream
+  f = fetch
+  sb = fetch --all -pP
+
+[pull]
+  ff = only
+
+[rebase]
+  autosquash = true
+
+[advice]
+  detachedHead = false
