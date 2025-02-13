@@ -13,7 +13,7 @@ local config = {
 
     enable_tab_bar = false,
 
-    window_decorations = "RESIZE",
+    window_decorations = "TITLE | RESIZE",
     window_close_confirmation = 'NeverPrompt',
 
     keys = {
