@@ -9,7 +9,7 @@ local config = {
     font_size = 14,
     scrollback_lines = 100000,
 
-    color_scheme = "catppuccin-mocha",
+    color_scheme = "catppuccin-latte",
 
     enable_tab_bar = false,
 

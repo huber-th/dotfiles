@@ -24,7 +24,7 @@ source $BREW_PATH/share/powerlevel10k/powerlevel10k.zsh-theme
 # Load zsh-syntax-highlighting
 source $BREW_PATH/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh_plugins/fzf
-source ~/.zsh_themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
+source ~/.zsh_themes/catppuccin_latte-zsh-syntax-highlighting.zsh
 
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
